@@ -1,19 +1,17 @@
 import React from "react";
-import Header from "../components/header/header.js";
-import Content from "../components/content/content.js";
-import Footer from "../components/footer/footer";
-import './App.scss';
+import Header from "../components/Header/Header.js"
+import Content from "../components/Content/content.js"
 
 export default class App extends React.Component {
-    render() {
-        return (
-            <div className="news-main-div">
-                <div className="content-panel">
-                    <Header title="Earth Newz" />
-                    <Content />
-                    <Footer />
-                </div>
-            </div>
-        )
-    }
-};
+	
+	render() {
+		return (
+			<div className="notifications-frame">
+				<div className="panel">
+					<Header title="Hello World!" />
+					<Content />
+				</div>
+			</div>
+		)
+	}
+}
