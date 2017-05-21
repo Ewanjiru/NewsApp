@@ -1,0 +1,20 @@
+{
+  "name": "newsapp",
+  "description": "Implements NewsApi to display news headlines",
+  "main": "index.js",
+  "authors": [
+    "Eunice"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Ewanjiru/NewsApp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "axios": "^0.16.1"
+  }
+}
