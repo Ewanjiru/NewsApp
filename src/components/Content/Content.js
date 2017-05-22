@@ -57,7 +57,6 @@ export default class Content extends React.Component {
 		});
 	}
 
-	// display a div having the articles' headlines,url,author and descriptions
 	render() {
 		const { filteredArticles } = this.state;
 		const { sourceSortbys } = this.state;
@@ -86,19 +85,19 @@ export default class Content extends React.Component {
 							}
 							return (
 								<a target="_blank" href={headline.url}>
-								<div className="card">
-									<div className="item" id={index} key={headline.id}>
-										<h3>{headline.title}</h3>
-										<p>{headline.description}</p>
-										<h5>{date}</h5><h5>By:{author}</h5>
-									</div>
-								</div></a>
+									<div className="card">
+										<div className="item" id={index} key={headline.id}>
+											<h3>{headline.title}</h3>
+											<p>{headline.description}</p>
+											<h5>{date}</h5><h5>By:{author}</h5>
+										</div>
+									</div></a>
 							);
 						})}
-				
+
 				</div>
 
-			  <Footer />
+				<Footer />
 			</div>
 
 		);
