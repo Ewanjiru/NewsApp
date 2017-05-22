@@ -3,6 +3,7 @@ require("!style-loader!css-loader!sass-loader!./Content.scss");
 import newsStore from "./../../stores/NewsStore";
 import NewsActions from "./../../actions/NewsActions";
 import Sidebar from "../Sidebar/Sidebar.js";
+import Footer from "../Footer/Footer.js";
 
 export default class Content extends React.Component {
 	constructor(props) {
@@ -84,16 +85,22 @@ export default class Content extends React.Component {
 								author = this.state.source;
 							}
 							return (
-								<a target="_blank" href={headline.url}><div className="card">
+								<a target="_blank" href={headline.url}>
+								<div className="card">
 									<div className="item" id={index} key={headline.id}>
 										<h3>{headline.title}</h3>
 										<p>{headline.description}</p>
 										<h5>{date}</h5><h5>By:{author}</h5>
-									</div></div></a>
+									</div>
+								</div></a>
 							);
 						})}
+				
 				</div>
+
+			  <Footer />
 			</div>
+
 		);
 	}
 }
