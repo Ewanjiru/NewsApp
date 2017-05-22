@@ -1,5 +1,4 @@
 const path = require('path');
-const PORT = process.env.PORT || 8080;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
