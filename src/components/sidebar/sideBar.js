@@ -1,56 +1,77 @@
 import React from "react";
 import newsStore from './../../stores/NewsStore';
 import NewsActions from './../../actions/NewsActions';
+import Sort from '../sort/Sort.js';
 import './Sidebar.scss';
 
 export default class Sidebar extends React.Component {
     constructor(props) {
         super(props);
-        const { updateSelectedSource } = props;
+        const updateSelectedSource = this.props.updateSelectedSource;
+
         this.state = {
             sources: newsStore.getSources(),
+            selectedSource: newsStore.getSelectedSource(),
+            searchSource: newsStore.getSearchSource()
         }
         this._onChange = this._onChange.bind(this);
-
+        this.handleSearch = this.handleSearch.bind(this);
     }
+
     componentDidMount() {
         newsStore.addListener(this._onChange);
         NewsActions.returnSources();
     }
+
     componentWillUnmount() {
         newsStore.removeListener(this._onChange);
     }
+
+    handleSearch(event) {
+        let searchInput = event.target.value
+        this.setState({
+            searchSource: searchInput
+        });
+        NewsActions.searchSource(searchInput)
+    }
+
     _onChange() {
-        const data = newsStore.getSources();
-        if (data) {
-            this.setState({
-                sources: data
-            });
-        } else {
-            alert("An error occured");
-        }
+        this.setState({
+            sources: newsStore.getSources(),
+            searchSource: newsStore.getSearchSource()
+        });
+
     }
 
     render() {
-        const { sources } = this.state;
-        //console.log(source)
+        let filteredSources;
+        const { searchSource } = this.state;
+        if (searchSource == '') {
+            filteredSources = this.state.sources;
+        } else {
+            filteredSources = this.state.sources.filter((sources) => {
+                return sources.name.toLowerCase().indexOf(this.state.searchSource.toLowerCase()) !== -1
+            });
+        }
         return (
             <div className="aside">
-                <h3 className="search">Search A source</h3>
-                <input type="text" className="searchField" placeholder="search a source" />
+                <h5 className="search">Search A source</h5>
+                <input type="text" className="searchField" placeholder="search a source" onKeyUp={this.handleSearch} />
+                <Sort />
                 <div className="navbar">
                     {
-                        sources.map((newsSource) => {
+                        filteredSources.map((newsSource) => {
                             return (
+                                <ul key={newsSource.id} value={newsSource.id} onClick={() => {
+                                    this.props.updateSelectedSource(newsSource);
 
-                                <ul key={newsSource.id} value={newsSource.id} onClick={() => this.props.updateSelectedSource(newsSource.id, newsSource.sortBysAvailable)}>{newsSource.name}</ul>
-
+                                }}>{newsSource.name}</ul>
                             );
 
                         })
                     };
                 </div>
-            </div>
+            </div >
         );
     }
 }
