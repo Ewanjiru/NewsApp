@@ -3,15 +3,15 @@ import appConstants from './../constants/AppConstants';
 import { EventEmitter } from 'events';
 
 const CHANGE_EVENT = 'change';
-let selected = null;
+
 const _store = {
 	articles: [],
-	sources: []
+	sources: [],
+	sourceSortBys: ['latest'],
+	selectedSource: 'the-next-web',
+	currentArticleSort: '',
+	searchSource: ''
 };
-
-function setSelected(source) {
-	selectedSource = source;
-}
 
 class NewsStore extends EventEmitter {
 
@@ -27,6 +27,14 @@ class NewsStore extends EventEmitter {
 		this.removeListener(CHANGE_EVENT, callback)
 	}
 
+	getSources() {
+		return _store.sources
+	}
+
+	setSources(source) {
+		_store.sources = source
+	}
+
 	getArticles() {
 		return _store.articles
 	}
@@ -35,16 +43,44 @@ class NewsStore extends EventEmitter {
 		_store.articles = articles;
 	}
 
-	getSelected() {
-		return selected
+	getSelectedSource() {
+		return _store.selectedSource
 	}
 
-	getSources() {
-		return _store.sources
+	setSelectedSource(source) {
+		_store.selectedSource = source
 	}
 
-	setSources(source) {
-		_store.sources = source
+	getSourceSortbys() {
+		return _store.sourceSortBys;
+	}
+
+	setSourceSortbys(sortBys) {
+		_store.sourceSortBys = sortBys
+	}
+
+	getSelectedDropDownSort() {
+		return _store.currentArticleSort;
+	}
+
+	setSelectedDropDownSort(currentArticleSort) {
+		_store.currentArticleSort = currentArticleSort
+	}
+
+	getSelectedSortBy() {
+		return _store.sortby
+	}
+
+	setSelectedSortBy(source) {
+		_store.selectedSource = source
+	}
+
+	getSearchSource() {
+		return _store.searchSource
+	}
+
+	setSearchSource(searchInput) {
+		_store.searchSource = searchInput
 	}
 }
 
@@ -57,16 +93,34 @@ newsStore.dispatchToken = AppDispatcher.register(action => {
 			newsStore.setArticles(action.data);
 			newsStore.emitChange();
 			break;
+
 		case appConstants.GET_HEADLINES_ERROR:
 			alert(action.message);
 			newsStore.emitChange();
 			break;
+
 		case appConstants.GET_SOURCES:
 			newsStore.setSources(action.data);
 			newsStore.emitChange();
 			break;
-		case appConstants.GET_SELECTED:
-			setSelected(action.category)
+
+		case appConstants.GET_SORTBYS:
+			newsStore.setSourceSortbys(action.data);
+			newsStore.emitChange();
+			break;
+
+		case appConstants.UPDATE_SOURCE:
+			newsStore.setSelectedSource(action.data)
+			newsStore.emitChange();
+			break;
+
+		case appConstants.UPDATE_ARTICLE_SORT:
+			newsStore.setSelectedDropDownSort(action.data)
+			newsStore.emitChange();
+			break;
+
+		case appConstants.UPDATE_SEARCH:
+			newsStore.setSearchSource(action.data)
 			newsStore.emitChange();
 			break;
 

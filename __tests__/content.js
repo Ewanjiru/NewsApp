@@ -1,13 +1,12 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Content from '../src/components/content';
+import Content from '../src/components/Content/Content.js';
 
-describe("News App Content Div", () => {
+describe("News App container Div", () => {
     let wrapper;
-    it("wraps the content under a div with .contentDiv class", () => {
+    it("wraps the content under a div with .container class", () => {
         wrapper = shallow(<Content />);
-        const divs = wrapper.find('div');
-        const newsContentDiv = wrapper.find('.contentDiv');
+        const newsContentDiv = wrapper.find('.container');
         expect(newsContentDiv.length).toBe(1);
     });
 });
