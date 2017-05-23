@@ -19,7 +19,7 @@ export default class Login extends React.Component {
           class="google-login"
           scope="profile"
           responseHandler={this.responseGoogle}
-          buttonText="Sign in" />
+          buttonText="Login With Google" />
       </div>
     );
   }

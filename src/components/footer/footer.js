@@ -1,12 +1,12 @@
 import React from "react";
-require("!style-loader!css-loader!sass-loader!./Footer.scss");
+import './Footer.scss';
 
-export default class Footer extends React.Component {
+export default class Header extends React.Component {
   render() {
     return (
-      <div className="footer" >
-        <h5>Copyright EarthNewZ 2017 </h5 >
-      </div >
+      <div className="footer">
+        <h4>Copyright @ earthnewz</h4>
+      </div>
     );
   }
 }

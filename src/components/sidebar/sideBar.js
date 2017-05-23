@@ -1,18 +1,19 @@
 import React from "react";
-import newsStore from "./../../stores/NewsStore";
-import NewsActions from "./../../actions/NewsActions";
-import Sort from "../Sort/Sort.js";
-require("!style-loader!css-loader!sass-loader!./Sidebar.scss");
+import newsStore from './../../stores/NewsStore';
+import NewsActions from './../../actions/NewsActions';
+import Sort from '../sort/Sort.js';
+import './Sidebar.scss';
 
 export default class Sidebar extends React.Component {
     constructor(props) {
         super(props);
         const updateSelectedSource = this.props.updateSelectedSource;
+
         this.state = {
             sources: newsStore.getSources(),
             selectedSource: newsStore.getSelectedSource(),
             searchSource: newsStore.getSearchSource()
-        };
+        }
         this._onChange = this._onChange.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
     }
@@ -27,11 +28,11 @@ export default class Sidebar extends React.Component {
     }
 
     handleSearch(event) {
-        let searchInput = event.target.value;
+        let searchInput = event.target.value
         this.setState({
             searchSource: searchInput
         });
-        NewsActions.searchSource(searchInput);
+        NewsActions.searchSource(searchInput)
     }
 
     _onChange() {
@@ -45,11 +46,11 @@ export default class Sidebar extends React.Component {
     render() {
         let filteredSources;
         const { searchSource } = this.state;
-        if (searchSource == "") {
+        if (searchSource == '') {
             filteredSources = this.state.sources;
         } else {
             filteredSources = this.state.sources.filter((sources) => {
-                return sources.name.toLowerCase().indexOf(this.state.searchSource.toLowerCase()) !== -1;
+                return sources.name.toLowerCase().indexOf(this.state.searchSource.toLowerCase()) !== -1
             });
         }
         return (
@@ -69,7 +70,7 @@ export default class Sidebar extends React.Component {
 
                         })
                     };
-        </div>
+                </div>
             </div >
         );
     }

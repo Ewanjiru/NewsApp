@@ -1,6 +1,8 @@
 import React from "react";
-require("!style-loader!css-loader!sass-loader!./Header.scss");
-import Login from "../Login/Login.js";
+import './Header.scss';
+import newsStore from './../../stores/NewsStore';
+import NewsActions from './../../actions/NewsActions';
+import Login from '../Login/Login.js';
 
 export default class Header extends React.Component {
 	render() {
@@ -9,7 +11,7 @@ export default class Header extends React.Component {
 				<div className="logo">
 					<img src="./../../../images/news_burned.png" alt="icon" />
 				</div>
-				<div className="title">{}</div>
+				<div className="title">{}</div>			
 				<div className="menuIcon">
 					<Login />
 				</div>

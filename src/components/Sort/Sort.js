@@ -1,14 +1,15 @@
 import React from "react";
 import newsStore from './../../stores/NewsStore';
 import NewsActions from './../../actions/NewsActions';
-require("!style-loader!css-loader!sass-loader!./Sort.scss");
+import Sidebar from '../Sidebar/Sidebar.js';
+import './Sort.scss';
 
 export default class Header extends React.Component {
   constructor() {
     super();
     this.state = {
       sortSourceby: ''
-    };
+    }
     this._onChange = this._onChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -20,12 +21,12 @@ export default class Header extends React.Component {
   componentWillUnmount() {
     newsStore.removeListener(this._onChange);
   }
-
+  
   handleChange(evt) {
-    const sortedBy = evt.target.value;
+    const sortedBy = evt.target.value
     this.setState({
       sortSourceby: sortedBy
-    });
+    })
     NewsActions.returnSortbySources(sortedBy);
   }
 
