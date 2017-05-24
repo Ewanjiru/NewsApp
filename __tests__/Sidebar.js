@@ -14,6 +14,11 @@ describe("The NewsApp Sidebar", () => {
     expect(sidebar.length).toBe(1);
   });
 
+  it('should have props for updateSelectedSource', () => {
+    const wrapper = shallow(<Sidebar />)
+    expect(wrapper.props().updateSelectedSource).toDefined;
+  });
+
   it('should test that the component mounts', () => {
     sinon.spy(Sidebar.prototype, 'componentDidMount');
     wrapper = mount(<Sidebar />);
@@ -28,13 +33,13 @@ describe("The NewsApp Sidebar", () => {
 
   it("should render  sources as ul", () => {
     wrapper = mount(<Sidebar />);
-    expect(wrapper.matchesElement(<ul></ul>)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<ul></ul>)).toEqual(true);
   });
 
   describe("the sidebar search component", () => {
     it("should render a search", () => {
       wrapper = mount(<Sidebar />);
-      expect(wrapper.matchesElement(<input />)).toEqual(true);
+      expect(wrapper.containsMatchingElement(<input />)).toEqual(true);
     });
 
     it("should call handleSearch onkeyup", () => {
@@ -44,4 +49,5 @@ describe("The NewsApp Sidebar", () => {
       expect(Sidebar.prototype.handleSearch.calledOnce).toEqual(true);
     });
   });
+
 })
