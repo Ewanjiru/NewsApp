@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Login from '../src/components/Login/Login.js';
+import Login from '../src/components/Login/Login';
 
 describe("The NewsApp google Login", () => {
   it("has renders a div", () => {

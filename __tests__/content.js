@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from "sinon";
-import Content from '../src/components/Content/Content.js';
-import Sidebar from '../src/components/Sidebar/Sidebar.js';
+import Content from "../src/components/Content/Content";
+import Sidebar from "../src/components/Sidebar/Sidebar";
 
 describe("The news App content", () => {
   let wrapper;

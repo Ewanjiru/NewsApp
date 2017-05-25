@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Footer from '../src/components/Footer/Footer.js';
+import Footer from "../src/components/Footer/Footer";
 
 describe("The NewsApp Footer", () => {
   it("has a footer with a copyright text", () => {

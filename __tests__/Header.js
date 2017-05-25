@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Header from '../src/components/Header/Header.js';
+import Header from "../src/components/Header/Header";
 
 describe("The NewsApp Header", () => {
   it("has a header div", () => {

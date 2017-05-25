@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from 'sinon';
-import Sidebar from '../src/components/Sidebar/Sidebar.js';
-import Sort from '../src/components/Sort/Sort.js';
-import newsStore from '../src/stores/NewsStore.js';
+import Sidebar from '../src/components/Sidebar/Sidebar';
+import Sort from '../src/components/Sort/Sort';
+import newsStore from '../src/stores/NewsStore';
 
 describe("The NewsApp Sidebar", () => {
   let wrapper;

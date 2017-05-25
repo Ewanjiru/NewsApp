@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from 'sinon';
-import Sort from '../src/components/Sort/Sort.js'
+import Sort from '../src/components/Sort/Sort'
 
 describe("The NewsApp Sort component", () => {
   let wrapper;
