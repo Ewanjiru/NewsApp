@@ -91,7 +91,7 @@ export default class Content extends React.Component {
 									<div className="card">
 										<div className="item" id={index} key={headline.id}>
 											<img src={headline.urlToImage} alt="img" />
-											<h3>{headline.title}</h3>
+											<h4>{headline.title}</h4>
 											<h5>{date}</h5><h5>By:{author}</h5>
 										</div>
 									</div></a>

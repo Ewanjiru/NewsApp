@@ -8,7 +8,7 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div className="main-frame">
-				<Header title="THE WORLD NEWS" />
+				<Header />
 				<Content />
 				<Footer />
 			</div>

@@ -6,47 +6,30 @@
 	.logo{
 		height: 80%;
 		width: 200px;
-		padding-top: 1.5px;
-	}	
-	.title {
-	        display: inline;
-	        text-align: center;
-	        color: #fff;
-	        font-weight: 600;
-	        font-size: 45px;
-	      }
-.menuIcon {
-        position: absolute;
-        width: 29px;
-        height: 15px;
-        top: 23px;
-        left: 20px;
-        cursor: pointer;   
-				 margin-left: 90%;
-        img{
-        	width: 100%
-        }   
-        }		
-	.searchField {
-			display: inline;
-			width:20%;  
-			border-radius: 17px;
-			margin-left: 25%;
-	    }
-	.searchIcon {
-		margin-left: 15%;
-		position: absolute;
-		font-size: 21px;
-		color: #FFFFFF;
-		top: 18px;
-		right: 20px;
-		cursor: pointer;
-		&:hover {
-		  color: #fff;
-		}
-		img {
-			width: 15%;
-			height:30px;
-		}
+		padding-bottom: 9px;
+		float: left;
 	}
+	.title{
+		float: right;
+		width: 30%;
+		color: white;
+	  display: inline-block;
+    font-size: 1.6em;
+		font-family: apple chancery;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+		margin-right: 30%;
+	}	     
+.loginIcon {
+		position: absolute;
+		width: 29px;
+		height: 15px;
+		top: 23px;
+		left: 20px; 
+		margin-left: 85%; 
+		margin-top: 40px;
+		}	
 }
