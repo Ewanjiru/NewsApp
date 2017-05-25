@@ -1,5 +1,5 @@
 import React from "react";
-import './Header.scss';
+import './header.scss';
 import Login from '../Login/Login.js';
 
 export default class Header extends React.Component {
