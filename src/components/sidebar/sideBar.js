@@ -1,7 +1,7 @@
 import React from 'react';
 import newsStore from './../../stores/NewsStore';
 import NewsActions from './../../actions/NewsActions';
-import Sort from '../sort/Sort';
+import Sort from '../Sort/Sort';
 import './sideBar.scss';
 
 export default class Sidebar extends React.Component {
