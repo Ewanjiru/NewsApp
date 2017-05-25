@@ -16,6 +16,7 @@ describe('Application store', () => {
   it('Asserts articles is set', () => {
     expect(newsStore.getArticles()).toEqual([]);
   });
+
   it('Asserts artcles is set', () => {
     newsStore.setArticles(['name: techruch'])
     expect(newsStore.getArticles()).toEqual(["name: techruch"]);

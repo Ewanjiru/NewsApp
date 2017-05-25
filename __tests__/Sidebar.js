@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from 'sinon';
-import Sidebar from '../src/components/Sidebar/Sidebar';
+import Sidebar from '../src/components/sidebar/sideBar';
 import Sort from '../src/components/Sort/Sort';
 import newsStore from '../src/stores/NewsStore';
 
@@ -30,15 +30,6 @@ describe("The NewsApp Sidebar", () => {
     wrapper = shallow(<Sidebar />);
     expect(wrapper.state().sources).toEqual(newsStore.getSources());
   });
-
-  // it("sets sources state", () => {
-  //   wrapper = shallow(<Sidebar />);
-  //   let setSources = [{ "category": "general", "country": "au", "description": "Australia's most trusted source of local, national and world news. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.", "id": "abc-news-au", "language": "en", "name": "ABC News (AU)", "sortBysAvailable": ["top"], "url": "http://www.abc.net.au/news", "urlsToLogos": { "large": "", "medium": "", "small": "" } }]
-  //   wrapper.setState({
-  //     source: setSources,
-  //   });
-  //   expect(wrapper.state().sources).toEqual(setSources)
-  // });
 
   it("should call handleSearch onkeyup", () => {
     sinon.spy(Sidebar.prototype, 'handleSearch');

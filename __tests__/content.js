@@ -2,7 +2,7 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from "sinon";
 import Content from "../src/components/Content/Content";
-import Sidebar from "../src/components/Sidebar/Sidebar";
+import Sidebar from "../src/components/sidebar/sideBar";
 
 describe("The news App content", () => {
   let wrapper;

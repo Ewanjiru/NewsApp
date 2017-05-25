@@ -1,7 +1,6 @@
 import React from "react";
 import newsStore from './../../stores/NewsStore';
 import NewsActions from './../../actions/NewsActions';
-import Sidebar from '../Sidebar/Sidebar.js';
 import './Sort.scss';
 
 export default class Header extends React.Component {
@@ -21,7 +20,7 @@ export default class Header extends React.Component {
   componentWillUnmount() {
     newsStore.removeListener(this._onChange);
   }
-  
+
   handleChange(evt) {
     const sortedBy = evt.target.value
     this.setState({
