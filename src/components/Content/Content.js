@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './Content.scss';
 import newsStore from './../../stores/NewsStore';
 import NewsActions from './../../actions/NewsActions';
@@ -13,12 +13,12 @@ export default class Content extends React.Component {
 			filteredArticles: [],
 			source: 'the-next-web',
 			sourceSortbys: newsStore.getSourceSortbys(),
-			selectedDropDownSort: newsStore.getSelectedDropDownSort()
-		}
+			selectedDropDownSort: newsStore.getSelectedDropDownSort(),
+		};
 
 		this._onChange = this._onChange.bind(this);
 		this.handleSourceChange = this.handleSourceChange.bind(this);
-		this.handleSortByDropDown = this.handleSortByDropDown.bind(this)
+		this.handleSortByDropDown = this.handleSortByDropDown.bind(this);
 	}
 
 	componentDidMount() {
@@ -30,7 +30,7 @@ export default class Content extends React.Component {
 		newsStore.removeListener(this._onChange);
 	}
 
-	//function to handle when source is changed
+	// function to handle when source is changed
 	handleSourceChange(source) {
 		NewsActions.onclickGetHeadlines(source.id);
 		NewsActions.onclickUpdateSource(source.id);
@@ -38,11 +38,11 @@ export default class Content extends React.Component {
 	}
 
 	handleSortByDropDown(event) {
-		const selectedSortBy = event.target.value
+		const selectedSortBy = event.target.value;
 		this.setState({
-			selectedDropDownSort: selectedSortBy
-		})
-		NewsActions.onclickUpdateArticleSort(selectedSortBy)
+			selectedDropDownSort: selectedSortBy,
+		});
+		NewsActions.onclickUpdateArticleSort(selectedSortBy);
 		NewsActions.loadSortByArticles(this.state.source, selectedSortBy);
 	}
 
@@ -57,10 +57,10 @@ export default class Content extends React.Component {
 		});
 	}
 
-	//display a div having the articles' headlines,url,author and descriptions
+	// display a div having the articles' headlines,url,author and descriptions
 	render() {
 		const { filteredArticles } = this.state;
-		const { sourceSortbys } = this.state
+		const { sourceSortbys } = this.state;
 		return (
 			<div className="container">
 				<Sidebar
@@ -70,30 +70,28 @@ export default class Content extends React.Component {
 					<div className="content-header">
 						<h5>Source:{this.state.source} Selected SortBy:{this.state.selectedDropDownSort}</h5>
 						<select value={this.state.selectedDropDownSort} onChange={this.handleSortByDropDown}>
-							<option value=''>All</option>
+							<option value="">All</option>
 							{
-								sourceSortbys.map((sorts) => {
-									return (
-										<option value={sorts.sortBysAvailable}>{sorts}</option>
-									);
-								})
+								sourceSortbys.map(sorts => (
+									<option value={sorts.sortBysAvailable}>{sorts}</option>
+								))
 							}
 						</select>
 					</div>
 
 					{
 						filteredArticles.map((headline, index) => {
-							const date = new Date(headline.publishedAt).toString()
-							let author = headline.author
+							const date = new Date(headline.publishedAt).toString();
+							let author = headline.author;
 							if (author == null) {
-								author = this.state.source
+								author = this.state.source;
 							}
 							return (
 								<a target="_blank" href={headline.url}>
 									<div className="card">
 										<div className="item" id={index} key={headline.id}>
 											<img src={headline.urlToImage} alt="img" />
-											<h3>{headline.title}</h3>
+											<h4>{headline.title}</h4>
 											<h5>{date}</h5><h5>By:{author}</h5>
 										</div>
 									</div></a>

@@ -2,8 +2,8 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from 'sinon';
 import Sidebar from '../src/components/Sidebar/Sidebar.js';
-import Sort from '../src/components/Sort/Sort.js'
-import axios from "axios";
+import Sort from '../src/components/Sort/Sort';
+import newsStore from '../src/stores/NewsStore';
 
 describe("The NewsApp Sidebar", () => {
   let wrapper;
@@ -21,27 +21,20 @@ describe("The NewsApp Sidebar", () => {
     Sidebar.prototype.componentDidMount.restore();
   });
 
-  it("should render a sortdropdown", () => {
-    wrapper = mount(<Sidebar />);
-    expect(wrapper.find(Sort).render().find('.sortDiv').length).toBe(1);
+  it('should receive props for updateSelectedSource', () => {
+    const wrapper = shallow(<Sidebar />)
+    expect(wrapper.props().updateSelectedSource).toDefined;
   });
 
-  it("should render  sources as ul", () => {
-    wrapper = mount(<Sidebar />);
-    expect(wrapper.matchesElement(<ul></ul>)).toEqual(true);
+  it("gets sources set state", () => {
+    wrapper = shallow(<Sidebar />);
+    expect(wrapper.state().sources).toEqual(newsStore.getSources());
   });
 
-  describe("the sidebar search component", () => {
-    it("should render a search", () => {
-      wrapper = mount(<Sidebar />);
-      expect(wrapper.matchesElement(<input />)).toEqual(true);
-    });
-
-    it("should call handleSearch onkeyup", () => {
-      sinon.spy(Sidebar.prototype, 'handleSearch');
-      wrapper = mount(<Sidebar />);
-      wrapper.find('input').simulate('keyup');
-      expect(Sidebar.prototype.handleSearch.calledOnce).toEqual(true);
-    });
+  it("should call handleSearch onkeyup", () => {
+    sinon.spy(Sidebar.prototype, 'handleSearch');
+    wrapper = mount(<Sidebar />);
+    wrapper.find('input').simulate('keyup');
+    expect(Sidebar.prototype.handleSearch.calledOnce).toEqual(true);
   });
 })

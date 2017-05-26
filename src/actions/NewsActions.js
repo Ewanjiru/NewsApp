@@ -1,6 +1,7 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import appConstants from '../constants/AppConstants';
 import axios from 'axios';
+
 export default {
 	//loads by default latest articles from The next web
 	loadHeadlines: () => {

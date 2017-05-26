@@ -5,7 +5,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <div className="footer">
-        <h4>Copyright @ earthnewz</h4>
+        <h4>Copyright @ e-newz</h4>
       </div>
     );
   }
