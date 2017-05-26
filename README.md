@@ -29,4 +29,4 @@ _npm start_
 
 Hosted App.
 
-_https://earthnewz.herokuapp.com/_
+https://e-newz-app.herokuapp.com/
