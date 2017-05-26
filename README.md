@@ -8,24 +8,24 @@ We ensure you are updated about the on going stories around the world. Our news 
 
 Users can:
 
-- login to the application using Google+.
+    - login to the application using Google+.
 
-- search through a list of sources
+    - search through a list of sources
 
-- select sources and view headlines based on sources
+    - select sources and view headlines based on sources
 
-- sort headlines for a selected source using
+    - sort headlines for a selected source using
 
-- open stories on new tabs
+    - open stories on new tabs
 
 
 **In case of further development one can install as below:**
 
 Git clone the repo
 
-_npm install_
+    _npm install_
 
-_npm start_
+    _npm start_
 
 Hosted App.
 
