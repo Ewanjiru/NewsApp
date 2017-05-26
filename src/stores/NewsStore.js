@@ -130,3 +130,4 @@ newsStore.dispatchToken = AppDispatcher.register(action => {
 });
 
 export default newsStore;
+
