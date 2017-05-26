@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from 'sinon';
-import Sidebar from '../src/components/Sidebar/Sidebar';
+import Sidebar from '../src/components/Sidebar/Sidebar.js';
 import Sort from '../src/components/Sort/Sort';
 import newsStore from '../src/stores/NewsStore';
 

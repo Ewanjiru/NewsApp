@@ -2,7 +2,7 @@ import React from 'react';
 import './Content.scss';
 import newsStore from './../../stores/NewsStore';
 import NewsActions from './../../actions/NewsActions';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar.js';
 
 export default class Content extends React.Component {
 
