@@ -8,8 +8,8 @@ const _store = {
 	sources: [],
 	sourceSortBys: ['latest'],
 	selectedSource: 'the-next-web',
-	currentArticleSort:'',
-	searchSource:''
+	currentArticleSort: '',
+	searchSource: ''
 };
 
 class NewsStore extends EventEmitter {
@@ -58,7 +58,7 @@ class NewsStore extends EventEmitter {
 		_store.sourceSortBys = sortBys
 	}
 
-		getSelectedDropDownSort() {
+	getSelectedDropDownSort() {
 		return _store.currentArticleSort;
 	}
 
@@ -73,12 +73,12 @@ class NewsStore extends EventEmitter {
 	setSelectedSortBy(source) {
 		_store.selectedSource = source
 	}
-	
-	getSearchSource(){
+
+	getSearchSource() {
 		return _store.searchSource
 	}
 
-	setSearchSource(searchInput){
+	setSearchSource(searchInput) {
 		_store.searchSource = searchInput
 	}
 }
@@ -86,7 +86,7 @@ class NewsStore extends EventEmitter {
 const newsStore = new NewsStore();
 
 newsStore.dispatchToken = AppDispatcher.register(action => {
-	
+
 	switch (action.actionType) {
 		case appConstants.LOAD_HEADLINES:
 			newsStore.setArticles(action.data);
@@ -122,7 +122,7 @@ newsStore.dispatchToken = AppDispatcher.register(action => {
 			newsStore.setSearchSource(action.data)
 			newsStore.emitChange();
 			break;
-			
+
 		default:
 			return true
 	}
@@ -130,5 +130,3 @@ newsStore.dispatchToken = AppDispatcher.register(action => {
 });
 
 export default newsStore;
-
-

@@ -38,3 +38,4 @@ describe("The NewsApp Sidebar", () => {
     expect(Sidebar.prototype.handleSearch.calledOnce).toEqual(true);
   });
 })
+

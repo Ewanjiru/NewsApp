@@ -1,8 +1,7 @@
+import React from "react";
 import AppDispatcher from '../src/dispatcher/AppDispatcher';
 import appConstants from '../src/constants/AppConstants';
 import newsStore from '../src/stores/NewsStore';
-
-import React from "react";
 
 describe('Application store', () => {
   it('Asserts sources is initially empty', () => {
