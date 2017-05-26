@@ -12153,11 +12153,7 @@ var Header = function (_React$Component) {
 						'E-NEWZ'
 					)
 				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'logo' },
-					_react2.default.createElement('img', { src: './../../../images/news_burned.png', alt: 'icon' })
-				),
+				_react2.default.createElement('div', { className: 'logo' }),
 				_react2.default.createElement(
 					'div',
 					{ className: 'loginIcon' },
@@ -14458,7 +14454,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(243)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(244)))
 
 /***/ }),
 /* 123 */
@@ -14508,7 +14504,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".header {\n  position: relative;\n  height: 150px;\n  background-color: #03a9f4;\n  border-radius: 17px; }\n  .header .logo {\n    height: 80%;\n    width: 200px;\n    padding-bottom: 9px;\n    float: left; }\n  .header .title {\n    float: right;\n    width: 30%;\n    color: white;\n    display: inline-block;\n    font-size: 1.6em;\n    font-family: apple chancery;\n    -webkit-margin-before: 0.83em;\n    -webkit-margin-after: 0.83em;\n    -webkit-margin-start: 0px;\n    -webkit-margin-end: 0px;\n    font-weight: bold;\n    margin-right: 30%; }\n  .header .loginIcon {\n    position: absolute;\n    width: 29px;\n    height: 15px;\n    top: 23px;\n    left: 20px;\n    margin-left: 85%;\n    margin-top: 40px; }\n", ""]);
+exports.push([module.i, ".header {\n  position: relative;\n  height: 150px;\n  background-color: #03a9f4;\n  border-radius: 17px; }\n  .header .logo {\n    height: 80%;\n    width: 200px;\n    padding-bottom: 9px;\n    float: left;\n    background-size: cover;\n    background-image: url(" + __webpack_require__(243) + "); }\n  .header .title {\n    float: right;\n    width: 30%;\n    color: white;\n    display: inline-block;\n    font-size: 1.6em;\n    font-family: apple chancery;\n    -webkit-margin-before: 0.83em;\n    -webkit-margin-after: 0.83em;\n    -webkit-margin-start: 0px;\n    -webkit-margin-end: 0px;\n    font-weight: bold;\n    margin-right: 30%; }\n  .header .loginIcon {\n    position: absolute;\n    width: 29px;\n    height: 15px;\n    top: 23px;\n    left: 20px;\n    margin-left: 85%;\n    margin-top: 40px; }\n", ""]);
 
 // exports
 
@@ -28196,6 +28192,12 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAABWCAMAAAAN
 
 /***/ }),
 /* 243 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "94869d08314b9a408fd630cfdf3dc68e.png";
+
+/***/ }),
+/* 244 */
 /***/ (function(module, exports) {
 
 var g;
