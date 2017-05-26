@@ -23,9 +23,9 @@ Users can:
 
 Git clone the repo
 
-    _npm install_
+    npm install
 
-    _npm start_
+    npm start
 
 Hosted App.
 
