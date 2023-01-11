@@ -37,7 +37,7 @@
     "react-dom": "^15.5.4",
     "react-google-login-component": "^0.7.0",
     "react-redux": "^5.0.4",
-    "serve": "^5.1.5",
+    "serve": "^14.1.2",
     "sinon": "^2.3.0"
   },
   "devDependencies": {
